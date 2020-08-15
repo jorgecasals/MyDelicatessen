@@ -1,0 +1,1 @@
+This is a project for enjoying basic stuff. Algorithms and Data Structures, Design Patterns, Clean Code, etc.
