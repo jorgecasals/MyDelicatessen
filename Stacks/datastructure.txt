@@ -1,2 +1,37 @@
 //Last in first out
 
+public class Stack<T>
+{
+	Node<T> top;
+	int length;
+	
+	public T Pop()
+	{
+		var result = Peek();
+		top = top.Next;
+	}
+	
+	public void Push(T value)
+	{
+		top = new Node<T>{Value = value, Next = top;};		
+	}
+	
+	public void Peek(){
+		if(top == null) throw new InvalidOperationException("stack is empty");
+		
+		return top.Value;
+	}
+	
+	public int Length => length;
+	
+	 
+	
+	
+	private class Node<T>
+	{
+		Node Next;
+		T Value;	
+	}
+}
+
+
