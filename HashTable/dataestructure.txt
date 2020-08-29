@@ -5,7 +5,7 @@ public class HashTable
 {
  public HashTable(int size)
  {
-	this.data = new int[size]; 
+	this.data = new LinkedList<(string, int)>[size]; 
  }
 
  private int Hash(string key)
@@ -21,12 +21,32 @@ public class HashTable
  public void Set(string key, int value)
  {
 	int index = Hash(key);
-	this.data[index] = value;
+	if(this.data[index] != null)
+	{
+		this.data[index] = new LindkedList();
+	}
+	this.data[index].Add((key, value));
  }
  
- public void Get(string key){
+ public value Get(string key){
 	int index = Hash(key);
 	
-	return this.data[index];
+	var list = this.data[index];
+	var value = GetValue(key, list)
+	
+	return value;
  }
+ 
+ private int GetValue(string key, LinkedList list){
+	foreach(var pair in list){
+		if(pair.key == key)
+			return pair.value;		
+	}
+	return -1;
+ }
+}
+
+public struct HashPair{
+	public int value;
+	public string key;
 }
