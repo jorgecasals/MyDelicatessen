@@ -9,15 +9,17 @@ public class Stack<T>
 	{
 		var result = Peek();
 		top = top.Next;
+		length--;
 	}
 	
 	public void Push(T value)
 	{
-		top = new Node<T>{Value = value, Next = top;};		
+		top = new Node<T>{Value = value, Next = top;};
+		length ++;
 	}
 	
 	public void Peek(){
-		if(top == null) throw new InvalidOperationException("stack is empty");
+		if(length == 0) throw new InvalidOperationException("stack is empty");
 		
 		return top.Value;
 	}
