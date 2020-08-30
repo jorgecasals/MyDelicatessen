@@ -1,0 +1,15 @@
+public int Factorial(int number){
+	if(number < 2)
+		return 1;
+		
+	return number*Factorial(number - 1);
+}
+
+public int Factorial(int number){
+	int result = 1;
+	while(number > 1){
+		result *= number --;
+	}
+	
+	return result;
+}
