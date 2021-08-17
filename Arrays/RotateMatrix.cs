@@ -1,5 +1,3 @@
-rotate matrix:
-
 public class Solution {
     public void Rotate(int[][] matrix) {
         Rotate(matrix, 0, 0, matrix.Length);
