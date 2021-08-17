@@ -1,0 +1,4 @@
+Ideas:
+
+Marking positions initially before processing and changing the input when the process makes dirty the input.
+Sometimes its tricky but has benefits in memory in place.

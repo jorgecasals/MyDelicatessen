@@ -1,0 +1,4 @@
+Errores programando:
+
+Cerrar unos parentesis
+Implementation de una operacion en un caso a medias
