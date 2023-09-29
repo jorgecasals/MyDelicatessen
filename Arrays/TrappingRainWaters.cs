@@ -59,5 +59,26 @@ namespace MyDelicatessen.ArrayProblems
 
             return result;
         }
+
+        public int TrapSimplified(int[] height)
+        {
+            int ans = 0, current = 0;
+            Stack<int> st = new Stack<int>();
+            while (current < height.Length)
+            {
+                while (st.Count > 0 && height[current] > height[st.Peek()])
+                {
+                    int top = st.Pop();
+
+                    if (st.Count == 0)//we break because we need two (always safe the element in the stack.)
+                        break;
+                    int distance = current - st.Peek() - 1;//We calculate the distance because we can be using a past step (more than one distance)
+                    int bounded_height = min(height[current], height[st.Peek()]) - height[top]; //The two extremes decides the height of the water (minus top)
+                    ans += distance * bounded_height;
+                }
+                st.Push(current++);
+            }
+            return ans;
+        }
     }
 }
